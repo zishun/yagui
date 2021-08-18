@@ -486,3 +486,22 @@ body {
   padding-bottom: 5px;
   margin: 10px 0 10px 0;
 }
+
+.normal-text {
+  font-size: 12px;
+  font-weight: 300;
+  color: #ffffff !important;
+  /*display: block;*/
+  background: #444444;
+  /*cursor: default !important;*/
+  text-align: left;
+  /*border-bottom: 1px solid #444444;*/
+  padding-bottom: 1px;
+  margin: 10px 10px 10px 10px;
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}

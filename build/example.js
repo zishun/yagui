@@ -56,9 +56,15 @@ var menuright2 = rightbar.addMenu('Another sidebar menu');
 menuright2.addTitle('Another title');
 menuright2.addColor('Blue', [0.5, 0.5, 1.0], computeGradient);
 menuright2.addDualButton('button1', 'button2' /*, callbackOrObject1, callbackOrObject2, key1, key2*/ );
+menuright2.addNumberBox('Input Number 1', 1.0, setInputNumber1)
+var textbox = menuright2.addText('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a pa.');
 
 //////// EXTRA //////
 topbar.addExtra(); // useless extra custom ui
 // var leftbar = main.addLeftSidebar(cbResizeCanvas); // add a left sidebar
 
 computeGradient([1.0, 1.5, 1.0]);
+
+function setInputNumber1(v) {
+  textbox.domText.innerHTML = 'set value: '+v.toString();
+}

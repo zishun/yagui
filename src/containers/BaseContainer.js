@@ -4,6 +4,8 @@ import Color from 'widgets/Color';
 import Combobox from 'widgets/Combobox';
 import Slider from 'widgets/Slider';
 import Title from 'widgets/Title';
+import NormalText from 'widgets/NormalText';
+import NumberBox from 'widgets/NumberBox';
 
 // label : 36%
 // slider : bar 52% + margin 2% + input 10%
@@ -33,6 +35,12 @@ class BaseContainer {
 
   addTitle(name) {
     var widget = new Title(name);
+    this.domUl.appendChild(widget.domText);
+    return widget;
+  }
+
+  addText(name) {
+    var widget = new NormalText(name);
     this.domUl.appendChild(widget.domText);
     return widget;
   }
@@ -68,6 +76,15 @@ class BaseContainer {
     if (name) domLine.appendChild(this._createLabel(name));
     domLine.appendChild(widget.domInputText);
     domLine.appendChild(widget.domSlider);
+    widget._setDomContainer(domLine);
+    return widget;
+  }
+
+  addNumberBox(name, valOrObject, callbackOrKey) {
+    var widget = new NumberBox(valOrObject, callbackOrKey);
+    var domLine = this._addLine();
+    if (name) domLine.appendChild(this._createLabel(name));
+    domLine.appendChild(widget.domInputText);
     widget._setDomContainer(domLine);
     return widget;
   }
